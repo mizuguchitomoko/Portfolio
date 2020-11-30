@@ -21,4 +21,14 @@
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1QoKiUFp9-mIwEuugxe9s1BHSmvhtmiByHSJMShZ45F4/edit#gid=0
 
+### 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
+
+### 使用素材
+google map
+https://www.google.com/maps/place/%E6%96%B0%E5%AE%AE%E6%95%B4%E9%AA%A8%E9%99%A2/@34.9222503,135.7162853,13.34z/data=!4m5!3m4!1s0x0:0x1551e0804f6c9c7!8m2!3d34.9426567!4d135.7084054
 
