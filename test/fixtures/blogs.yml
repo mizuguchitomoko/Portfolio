@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  blog_title: MyString
+  image_id: MyString
+  blog_text: MyText
+  derector_id: 1
+
+two:
+  blog_title: MyString
+  image_id: MyString
+  blog_text: MyText
+  derector_id: 1
