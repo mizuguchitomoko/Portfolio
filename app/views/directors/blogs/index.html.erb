@@ -1,0 +1,16 @@
+<div class="container">
+　<div class="row">
+　  <h1>ブログ一覧</h1>
+　    <div class ="blog-box">
+　      <% @blogs.each do |blog| %>
+　        <div class = "blog-item">
+　          <div class ="blog-image"><%= attachment_image_tag blog, :image, :fill, 60, 60 %></div>
+　          <section class ="blog-text">
+　            <h3 class="blog-text-heding"><%= link_to blog.blog_title, directors_blogs_path(blog) %></h3>
+　            <p class ="date"><%= blog.created_at %></p>
+　          </section>
+　        </div>
+　      <% end %>
+　    </div>
+　</div>
+</div>

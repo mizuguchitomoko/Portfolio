@@ -1,3 +1,4 @@
 class Blog < ApplicationRecord
-  belongs_to :derector
+  belongs_to :derector, optional: true
+  attachment :image
 end
