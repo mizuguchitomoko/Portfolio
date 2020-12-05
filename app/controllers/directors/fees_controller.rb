@@ -10,6 +10,10 @@ class Directors::FeesController < ApplicationController
     redirect_to directors_fees_path
   end
 
+  def show
+    @fee = Fee.find(params[:id])
+  end
+
   def edit
     @fee = Fee.find(params[:id])
   end
@@ -28,6 +32,6 @@ class Directors::FeesController < ApplicationController
 
   private
   def fee_params
-    params.require(:fee).permit(:course, :price)
+    params.require(:fee).permit(:course, :price, :course_text)
   end
 end

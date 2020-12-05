@@ -12,7 +12,7 @@
         <tbody>
           <% @fees.each do |fee| %>
             <tr>
-              <td class="text-left"><%= fee.course %></td>
+              <td class="text-left"><%= link_to fee.course, fee_path(fee) %></td>
               <td class="fee-td">￥<%= fee.price %></td>
             </tr>
           <% end %>
