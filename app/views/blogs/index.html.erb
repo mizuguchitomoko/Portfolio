@@ -1,2 +1,15 @@
-<h1>Blogs#index</h1>
-<p>Find me in app/views/blogs/index.html.erb</p>
+<div class="container">
+　<div class="row">
+　  <h1>ブログ一覧</h1>
+　    <div class ="blog-box">
+　      <% @blogs.each do |blog| %>
+　          <div class="img-container"><%= attachment_image_tag blog, :image, :fill, 150, 130 %>
+　          <section class ="blog-text">
+　            <h3 class="blog-text-heding"><%= link_to blog.blog_title, blog_path(blog) %></h3>
+　            <p class ="date"><%= blog.created_at %></p>
+　          </section>
+　        </div>
+　      <% end %>
+　    </div>
+　</div>
+</div

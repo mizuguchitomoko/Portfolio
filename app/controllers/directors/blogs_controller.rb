@@ -4,9 +4,6 @@ class Directors::BlogsController < ApplicationController
     @blogs = Blog.all
   end
 
-  def show
-  end
-
   def new
     @blog = Blog.new
   end
@@ -14,7 +11,7 @@ class Directors::BlogsController < ApplicationController
   def create
     blog = Blog.new(blog_params)
     blog.save!
-    redirect_to directors_blogs_path#あとでshowに変更
+    redirect_to directors_blog_path(blog.id)
   end
 
   def show
@@ -22,12 +19,19 @@ class Directors::BlogsController < ApplicationController
   end
 
   def edit
+    @blog = Blog.find(params[:id])
   end
 
   def update
+    @blog = Blog.find(params[:id])
+    @blog.update(blog_params)
+    redirect_to directors_blog_path
   end
 
   def destroy
+    blog = Blog.find(params[:id])
+    blog.destroy
+    redirect_to directors_blogs_path
   end
 
   private
