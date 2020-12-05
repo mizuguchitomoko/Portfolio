@@ -1,2 +1,23 @@
-<h1>Fees#index</h1>
-<p>Find me in app/views/fees/index.html.erb</p>
+<div class="container">
+　<div class="row">
+　  <div class="col-xs-6 col-xs-offset-2">
+　  <h3>コース一覧・追加</h3><br>
+      <table class="table">
+        <thead>
+          <tr class="active">
+            <th>コース内容</th>
+            <th>料金</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @fees.each do |fee| %>
+            <tr>
+              <td class="text-left"><%= fee.course %></td>
+              <td class="fee-td">￥<%= fee.price %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+　</div>
+</div>

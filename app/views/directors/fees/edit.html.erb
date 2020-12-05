@@ -1,2 +1,12 @@
-<h1>Fees#edit</h1>
-<p>Find me in app/views/fees/edit.html.erb</p>
+<div class="container">
+　<div class="row">
+　  <h3>料金表編集</h3>
+　  <%= form_with model:@fee, url:"/directors/fees/#{@fee.id}", local: true do |f| %>
+　    <h4>コース内容</h4>
+      <%= f.text_field :course %>
+　    <h4>料金</h4>
+      <%= f.text_field :price %>
+      <%= f.submit "編集を保存", class: "btn btn-primary" %>
+　  <% end %>
+　</div>
+</div>
