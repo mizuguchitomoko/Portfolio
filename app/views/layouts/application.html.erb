@@ -8,7 +8,34 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <nav class='nav navbar-nav navbar-left' >
+      <a class="navbar-brand" href="/">
+			  LIFE CHANGE PARTNER
+			</a>
+    </nav>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <% if director_signed_in? %>
 
+          <li><%= link_to ' About', about_path %></li>
+          <li><%= link_to ' Blot', directors_blogs_path %></li>
+          <li><%= link_to ' Price', directors_fees_path %></li>
+          <li><%= link_to ' Schelule', directors_schedules_path %></li>
+          <li><%= link_to ' Contact', schedules_path %></li>
+          <li><%= link_to ' ログアウト', destroy_director_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to ' About', about_path %></li>
+          <li><%= link_to ' Blot', blogs_path %></li>
+          <li><%= link_to ' Price', fees_path %></li>
+          <li><%= link_to ' Schelule', schedules_path %></li>
+          <li><%= link_to ' Contact', schedules_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
   <body>
     <%= yield %>
   </body>

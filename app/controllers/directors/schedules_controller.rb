@@ -1,4 +1,5 @@
 class Directors::SchedulesController < ApplicationController
+#before_action :authenticate_director!
   def index
     @schedule = Schedule.new
     @schedules = Schedule.all
@@ -7,6 +8,22 @@ class Directors::SchedulesController < ApplicationController
   def create
     schedule = Schedule.new(schedule_params)
     schedule.save!
+    redirect_to directors_schedules_path
+  end
+
+  def edit
+    @schedule = Schedule.find(params[:id])
+  end
+
+  def update
+    @schedule = Schedule.find(params[:id])
+    @schedule.update(schedule_params)
+    redirect_to directors_schedules_path
+  end
+
+  def destroy
+    schedule = Schedule.find(params[:id])
+    schedule.destroy
     redirect_to directors_schedules_path
   end
 

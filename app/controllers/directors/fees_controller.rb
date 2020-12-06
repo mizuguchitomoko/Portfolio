@@ -1,4 +1,5 @@
 class Directors::FeesController < ApplicationController
+#before_action :authenticate_director!
   def index
     @fee = Fee.new
     @fees = Fee.all

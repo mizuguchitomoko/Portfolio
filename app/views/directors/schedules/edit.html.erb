@@ -1,0 +1,14 @@
+<div class="container">
+　<div class="row">
+　  <h1>予定編集</h1>
+　  <%= form_with model:@schedule, url:"/directors/schedules/#{@schedule.id}", local: true do |f| %>
+　    <h4>予定日時</h4>
+      <%= f.datetime_select :start_time %>
+　    <h4>予定内容</h4>
+      <%= f.text_field :content %>
+      <%= f.submit "編集を保存", class: "btn btn-primary" %>
+      <%= link_to "削除", directors_schedule_path(@schedule), method: :delete, class:"btn btn-danger" %>
+　  <% end %>
+　  <%= link_to "<< Back", directors_schedules_path %>
+　</div>
+</div>
