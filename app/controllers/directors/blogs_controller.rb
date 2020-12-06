@@ -1,5 +1,5 @@
 class Directors::BlogsController < ApplicationController
-#before_action :authenticate_director!
+before_action :authenticate_director!
   def index
     @blogs = Blog.page(params[:page]).per(6)
   end

@@ -1,5 +1,5 @@
 class Directors::SchedulesController < ApplicationController
-#before_action :authenticate_director!
+before_action :authenticate_director!
   def index
     @schedule = Schedule.new
     @schedules = Schedule.all

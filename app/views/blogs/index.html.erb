@@ -1,8 +1,8 @@
 <div class="container">
 　<div class="row">
 　  <h1>ブログ一覧</h1>
-　    <div class="box11">
 　      <% @blogs.each do |blog| %>
+　        <div class="box11">
 　          <div class="img-container"><%= attachment_image_tag blog, :image, :fill, 150, 130 %>
 　          <section class ="blog-text">
 　            <h3 class="blog-text-heding"><%= link_to blog.blog_title, blog_path(blog) %></h3>
