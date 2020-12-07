@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_06_035007) do
+ActiveRecord::Schema.define(version: 2020_12_07_012838) do
 
   create_table "blogs", force: :cascade do |t|
     t.string "blog_title"
     t.string "image_id"
     t.text "blog_text"
     t.integer "derector_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "name"
+    t.text "massage"
+    t.integer "address", default: 0, null: false
+    t.string "email"
+    t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
