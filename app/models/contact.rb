@@ -11,4 +11,15 @@ class Contact < ApplicationRecord
     福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46,
     沖縄県:47
   }
+  enum gender:{
+    男性:1,女性:2,その他:3
+  }
+  enum age:{
+    １０代:1,２０代:2,３０代:3,４０代:4,５０代:5,６０代:6,７０代:7,８０代:8,９０代:9,１００代以上:10
+  }
+  validates :name, presence: true
+  #validates :massage, presence: true
+  validates :email, presence: true
+  #validates :phone_number, presence: true
+  #validates :address, presence: true
 end

@@ -1,0 +1,27 @@
+<div class="container">
+　<div class="row">
+　<div class="col-xs-9">
+　  <h1>お問い合わせ一覧</h1>
+      <table class="table table-hover table-inverse">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>氏名</th>
+          <th>メールアドレス</th>
+        </tr>
+      <div class="table">
+        <tbody>
+        <% @contacts.each do |contact| %>
+        <tr>
+          <td><%= contact.id %></td>
+          <td><%= link_to directors_contact_path(contact) do %><%= contact.name %>様<% end %></td>
+          <td><%= contact.email %></td>
+        </tr>
+        <% end %>
+        <tbody>
+       </div>
+    </table>
+    <%= paginate @contacts %>
+  </div>
+　</div>
+</div

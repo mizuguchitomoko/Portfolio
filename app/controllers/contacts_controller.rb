@@ -4,9 +4,13 @@ class ContactsController < ApplicationController
   end
 
   def create
-    contact = Contact.new(contact_params)
-    contact.save!
-    redirect_to contacts_complete_path
+    @contact = Contact.new(contact_params)
+    if @contact.save
+      #ContactMailer.contact_mail(@contact).deliver
+      redirect_to contacts_complete_path
+    else
+      render 'new'
+    end
   end
 
   def complete
@@ -14,6 +18,6 @@ class ContactsController < ApplicationController
 
   private
   def contact_params
-    params.require(:contact).permit(:name, :massage, :address, :email, :phone_number)
+    params.require(:contact).permit(:name, :massage, :address,:gender, :age, :email, :phone_number)
   end
 end

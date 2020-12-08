@@ -1,0 +1,29 @@
+<div class ="container">
+  <div class ="row">
+    <div class="col-xs-7"><br><br>
+    <h2><%= @contact.name %>様のお問い合わせ詳細</h2><br>
+    <table class="table table-hover table-inverse">
+      <tr>
+        <th>お問い合わせID</th>
+        <th><%= @contact.id %></th>
+      </tr>
+      <tr>
+        <th>氏名</th>
+        <th><%= @contact.name %></th>
+      </tr>
+      <tr>
+        <th>email</th>
+        <th><%= @contact.email %></th>
+      </tr>
+      <tr>
+        <th>お電話番号</th>
+        <th><%= @contact.phone_number %></th>
+      </tr>
+    </table>
+    <h4>お問い合わせ内容</h4>
+    <p class ="contact-message">
+      <%= @contact.massage %>
+    </p>
+  </div>
+  </div>
+</div>

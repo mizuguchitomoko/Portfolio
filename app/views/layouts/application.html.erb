@@ -23,14 +23,14 @@
           <li><%= link_to ' Blot', directors_blogs_path %></li>
           <li><%= link_to ' Price', directors_fees_path %></li>
           <li><%= link_to ' Schelule', directors_schedules_path %></li>
-          <li><%= link_to ' Contact', schedules_path %></li>
+          <li><%= link_to ' Contact', directors_contacts_path %></li>
           <li><%= link_to ' Logout', destroy_director_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to ' About', about_path %></li>
           <li><%= link_to ' Blog', blogs_path %></li>
           <li><%= link_to ' Price', fees_path %></li>
           <li><%= link_to ' Schedule', schedules_path %></li>
-          <li><%= link_to ' Contact', schedules_path %></li>
+          <li><%= link_to ' Contact', contacts_path %></li>
         <% end %>
       </ul>
     </nav>
