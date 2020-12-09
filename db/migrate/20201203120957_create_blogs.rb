@@ -4,7 +4,7 @@ class CreateBlogs < ActiveRecord::Migration[5.2]
       t.string :blog_title
       t.string :image_id
       t.text :blog_text
-      t.integer :derector_id
+      t.integer :director_id
 
       t.timestamps
     end

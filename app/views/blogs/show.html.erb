@@ -13,6 +13,20 @@
 　  <p class="blog-text">
 　    <%= @blog.blog_text %>
 　  </p>
+　  <h3>コメント一覧</h3>
+　  <% @blog.blog_comments.each do |blog_comment| %>
+　    <p class="blog-comment">お名前：<%= blog_comment.comment_name %>
+　    <p>コメント：<%= blog_comment.blog_comment %>
+　    <%= link_to "コメントを削除", blog_blog_comment_path(blog_comment), method: :delete %>
+　    </p></p>
+　  <% end %>
+　  <%= form_with(model:[@blog, @blog_comment], local: true) do |f| %>
+　    <h4>お名前</h4>
+　    <%= f.text_field :comment_name %>
+　    <h4>コメント</h4>
+　    <%= f.text_area :blog_comment, size:"40x10", placeholder: "コメントをここに" %>
+　    <%= f.submit "コメント投稿", class: "btn btn-primary" %>
+    <% end %>
 　  <%= link_to "<< Back", blogs_path %>
   </div>
 </div>

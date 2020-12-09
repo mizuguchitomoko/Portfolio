@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   get 'schedule/index'
   root 'blogs#index'
   get 'about' => 'blogs#about'
-  resources :blogs, only: [:index, :show]
+  resources :blogs, only: [:index, :show] do
+    resources :blog_comments, only: [:create, :destroy]
+  end
   get 'fees' => 'fees#index'
   get 'fees/:id' => 'fees#show', as: 'fee'
   get 'schedules' => 'schedules#index'
@@ -17,7 +19,7 @@ Rails.application.routes.draw do
     resources :blogs
     resources :fees
     resources :schedules
-    resources :contacts, only: [:index, :show]
+    resources :contacts, only: [:index, :show, :destroy]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -10,13 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_07_012838) do
+ActiveRecord::Schema.define(version: 2020_12_09_034418) do
+
+  create_table "blog_comments", force: :cascade do |t|
+    t.text "blog_comment"
+    t.string "comment_name"
+    t.integer "blog_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "blogs", force: :cascade do |t|
     t.string "blog_title"
     t.string "image_id"
     t.text "blog_text"
-    t.integer "derector_id"
+    t.integer "director_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
