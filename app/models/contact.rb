@@ -18,8 +18,5 @@ class Contact < ApplicationRecord
     １０代:1,２０代:2,３０代:3,４０代:4,５０代:5,６０代:6,７０代:7,８０代:8,９０代:9,１００代以上:10
   }
   validates :name, presence: true
-  #validates :massage, presence: true
   validates :email, presence: true
-  #validates :phone_number, presence: true
-  #validates :address, presence: true
 end

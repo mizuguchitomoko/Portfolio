@@ -2,6 +2,15 @@
 　<div class="row">
 　　<h1>ブログ新規投稿</h1>
 　　<%= form_with model:@blog, url: directors_blogs_path, local:true do |f| %>
+　　  <% if @blog.errors.any? %>
+      <div>
+        <ul style="color: red">
+          <% @blog.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
 　　  <h4>タイトル</h4>
 　　  <%= f.text_field :blog_title %>
 　　  <h4>画像投稿</h4>
