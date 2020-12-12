@@ -8,8 +8,5 @@ RSpec.describe Blog, type: :model do
       @blog.blog_text = "今日も晴れです。"
       @blog.save
     end
-    it "タイトルと本文が入力してあるので保存される" do
-      expect(@blog).to be_valid
-    end
   end
 end

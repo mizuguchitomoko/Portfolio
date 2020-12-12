@@ -1,6 +1,6 @@
 <div class="container">
 　<div class="row">
-　  <h1>ブログ</h1>
+　  <h1>Blog</h1>
 　  <h3 class="blog-heding">
 　    <%= @blog.blog_title %>
 　  </h3>
@@ -13,12 +13,15 @@
 　  <p class="blog-text">
 　    <%= @blog.blog_text %>
 　  </p>
-　  <h3>コメント一覧</h3>
+　  <h3>Comments</h3>
+　  <div class="box11">
+
 　  <% @blog.blog_comments.each do |blog_comment| %>
-　    <p class="blog-comment">お名前：<%= blog_comment.comment_name %>
+　    <p class="blog-comment">お名前：<%= blog_comment.comment_name %></p>
 　    <p>コメント：<%= blog_comment.blog_comment %>
 　    <%= link_to "コメントを削除", blog_blog_comment_path(blog_comment.blog, blog_comment), method: :delete %>
-　    </p></p>
+　    </p><br>
+    </div>
 　  <% end %>
 　  <%= form_with(model:[@blog, @blog_comment], local: true) do |f| %>
 　    <h4>お名前</h4>

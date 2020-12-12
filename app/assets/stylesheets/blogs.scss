@@ -1,8 +1,34 @@
 // Place all the styles related to the blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 .img-container{
   display:flex;
+}
+.main-visual {
+  width: 100%;
+  height: 400px;
+  margin-top: 50px;
+  background-image: url(image3.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.main-visual-content {
+  width: 30%;
+  height: 360px;
+  margin-left: 800px;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.main-visual-text {
+  font-size: 30px;
+  color: #fff;
+}
+.main-visual-name {
+  font-size: 20px;
+  margin-top: 30px;
+  color: #fff;
 }
 
 
