@@ -2,11 +2,12 @@
 　<div class="row">
 　  <div class="col-xs-offset-1">
      <h1>Schedule</h1>
-　  <%= month_calendar events: @schedules do |date, schedules| %>
-      <%= date.day %>
-      <% schedules.each do |schedule| %>
-      <%= schedule.content %>
+  　  <%= month_calendar events: @schedules do |date, schedules| %>
+        <%= date.day %>
+        <% schedules.each do |schedule| %><br />
+        <%= schedule.start_time.strftime('%H:%M') %>
+        <%= schedule.content %>
+        <% end %>
       <% end %>
-    <% end %>
 　</div>
 </div>

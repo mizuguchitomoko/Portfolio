@@ -5,7 +5,7 @@
 　    <%= @blog.blog_title %>
 　  </h3>
 　  <p class ="blog-date">
-　    <%= @blog.created_at %>
+　    <%= @blog.created_at.strftime('%Y/%m/%d %H:%M') %>
 　  </p>
 　  <div class="blog-image">
 　    <%= attachment_image_tag @blog, :image, :fill, 500, 350 %>
