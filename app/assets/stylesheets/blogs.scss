@@ -48,5 +48,19 @@
   display: inline;
 }
 .blog-new{
-    padding-left: 200px;
+  padding-left: 200px;
+}
+.person1{
+  width:480px;
+  height:400px;
+}
+.name{
+  width:200px;
+}
+.about-box{
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f7f7f7;
+  display: flex;
+  justify-content: flex-start;
 }

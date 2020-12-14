@@ -4,9 +4,9 @@ ja:
       contact:
         name: 名前
         email: メールアドレス
+        massage: メッセージ
   activerecord:
     attributes:
       blog:
         blog_title: ブログタイトル
         blog_text: ブログ本文
-        image_id: ブログ画像
