@@ -8,3 +8,6 @@ ja:
       blog:
         blog_title: ブログタイトル
         blog_text: ブログ本文
+      blog_comment:
+        blog_comment: コメント
+        comment_name: 名前
