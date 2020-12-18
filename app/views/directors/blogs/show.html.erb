@@ -15,6 +15,10 @@
 　  </p>
 　  <%= link_to "編集", edit_directors_blog_path(@blog), class:"btn btn-primary" %>
 　  <%= link_to "削除", directors_blog_path(@blog), method: :delete, class:"btn btn-danger" %><br>
+　  <!-- コメント一覧 -->
+    <div id="comment-create">
+      <%= render partial: 'blog_comments/blog_comment', locals: { blog_comments: @blog_comments } %>
+    </div>
 　  <h3>コメント一覧</h3>
 　  <% @blog.blog_comments.each do |blog_comment| %>
 　  <div class="box11">
