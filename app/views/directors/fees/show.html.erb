@@ -4,7 +4,7 @@
       <h3 class="course-heding">コース名：<%= @fee.course %></h3>
       <h3 class="course-text">コース説明</h3>
       <p class="course-text">
-        <%= @fee.course_text %>
+        <%= simple_format(@fee.course_text) %>
       </p>
       <%= link_to "<< Back", directors_fees_path %>
     </div>
