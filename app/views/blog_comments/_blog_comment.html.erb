@@ -3,11 +3,11 @@
   <div class="box11">
     <p class="blog-comment">お名前：<%= blog_comment.comment_name %>
     <p>コメント：<%= blog_comment.blog_comment %>
-    <%= link_to blog_blog_comment_path(blog_comment.blog, blog_comment), method: :delete, remote: :true do %>
-      <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-    <% end %>
     <span class="comment-date pull-right">
       <%= blog_comment.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+      <%= link_to blog_blog_comment_path(blog_comment.blog, blog_comment), method: :delete do %>
+        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+      <% end %>
     </span>
     </p>
   </div>

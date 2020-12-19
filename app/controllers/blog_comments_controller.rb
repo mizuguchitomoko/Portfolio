@@ -4,12 +4,11 @@ class BlogCommentsController < ApplicationController
     @blog_comment = BlogComment.new(blog_comment_params)
     @blog_comment.blog_id = @blog.id
     @blog_comment.save
-    #redirect_to blog_path(@blog)
   end
 
   def destroy
     BlogComment.find_by(id: params[:id], blog_id: params[:blog_id]).destroy
-    #redirect_to blog_path(params[:blog_id])
+    redirect_to blog_path(params[:blog_id])
   end
 
   private

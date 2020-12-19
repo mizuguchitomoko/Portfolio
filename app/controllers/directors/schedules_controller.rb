@@ -11,6 +11,10 @@ before_action :authenticate_director!
     redirect_to directors_schedules_path
   end
 
+  def show
+    @schedule = Schedule.find(params[:id])
+  end
+
   def edit
     @schedule = Schedule.find(params[:id])
   end
@@ -29,6 +33,6 @@ before_action :authenticate_director!
 
   private
   def schedule_params
-    params.require(:schedule).permit(:content, :start_time)
+    params.require(:schedule).permit(:content, :start_time, :plan)
   end
 end

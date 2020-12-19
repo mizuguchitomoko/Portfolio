@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'fees' => 'fees#index'
   get 'fees/:id' => 'fees#show', as: 'fee'
   get 'schedules' => 'schedules#index'
+  get 'schedules/:id' => 'schedules#show', as: 'schedule'
   get 'contacts' => 'contacts#new'
   get 'contacts/complete' => 'contacts#complete'
   resources :contacts, only: [:new, :create]

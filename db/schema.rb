@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 2020_12_09_034418) do
 
   create_table "schedules", force: :cascade do |t|
     t.string "content"
+    t.text "plan"
     t.datetime "start_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -6,7 +6,7 @@
         <%= date.day %>
         <% schedules.each do |schedule| %><br />
         <%= schedule.start_time.strftime('%H:%M') %>
-        <%= schedule.content %>
+        <%= link_to schedule.content,schedule_path(schedule) %>
         <% end %>
       <% end %>
 　</div>
