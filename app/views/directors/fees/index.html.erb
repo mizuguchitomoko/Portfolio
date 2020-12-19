@@ -26,7 +26,7 @@
               <td class="fee-td">￥<%= fee.price %></td>
               <td class="fee-td">
                 <%= link_to "編集", edit_directors_fee_path(fee), class: " btn btn-success" %>
-                <%= link_to "削除", "/directors/fees/#{fee.id}", method: :delete, class:"btn btn-danger" %>
+                <%= link_to "削除", "/directors/fees/#{fee.id}", method: :delete, class:"btn btn-danger", "data-confirm" => "本当に削除しますか？" %>
               </td>
             </tr>
           <% end %>

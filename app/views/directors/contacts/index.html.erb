@@ -18,7 +18,7 @@
           <td><%= link_to directors_contact_path(contact) do %><%= contact.name %>様<% end %></td>
           <td><%= contact.email %></td>
           <td>
-            <%= link_to "削除", directors_contact_path(contact), method: :delete, class:"btn btn-danger" %>
+            <%= link_to "削除", directors_contact_path(contact), method: :delete, class:"btn btn-danger", "data-confirm" => "本当に削除しますか？" %>
           </td>
         </tr>
         <% end %>

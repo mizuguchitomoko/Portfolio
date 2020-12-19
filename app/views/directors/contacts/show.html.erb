@@ -12,6 +12,18 @@
         <th><%= @contact.name %></th>
       </tr>
       <tr>
+        <th>ご住所</th>
+        <th><%= @contact.address %></th>
+      </tr>
+      <tr>
+        <th>性別</th>
+        <th><%= @contact.gender %></th>
+      </tr>
+      <tr>
+        <th>年齢</th>
+        <th><%= @contact.age %></th>
+      </tr>
+      <tr>
         <th>email</th>
         <th><%= @contact.email %></th>
       </tr>
@@ -24,6 +36,7 @@
     <p class ="contact-message">
       <%= @contact.massage %>
     </p>
+    <%= link_to "<< Back", directors_contacts_path %>
   </div>
   </div>
 </div>
