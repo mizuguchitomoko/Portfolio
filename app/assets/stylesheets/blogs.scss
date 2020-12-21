@@ -31,7 +31,7 @@
   color: #fff;
 }
 
-
+/* ブログ囲みデザイン */
 .box11{
     padding: 0.5em 1em;
     margin: 1em 0;
@@ -71,8 +71,8 @@
   justify-content: center;
 }
 .item1{
-  width:28%;
-  height:250px;
+  width:35%;
+  height:230px;
   margin:50px 20px;
 }
 
@@ -87,4 +87,52 @@
 }
 .erea{
   background-color:#F5F5F5;
+}
+
+/* top画面ボタンホバー効果 */
+.btn-flat-border {
+  display: inline-block;
+  padding: 0.3em 2em;
+  margin-bottom:50px;
+  text-decoration: none;
+  color: #000000;
+  border: solid 2px #000000;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.btn-flat-border:hover {
+  background: #C0C0C0;
+  color: white;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width:425px) {
+  .main-visual-text {
+    display: none;
+  }
+  .concept {
+  width: 100%;
+  margin-top: 250px;
+  text-align: center;
+  display: block;
+  justify-content: center;
+}
+  .main-visual {
+  display: none;
+}
+.about-box{
+  padding-bottom: 20px;
+  margin-top: 200px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f7f7f7;
+  display: block;
+  justify-content: flex-start;
+}
+.clinic{
+  width: 100%;
+}
+.ggmap{
+  width: 100%;
+}
 }

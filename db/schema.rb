@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_09_034418) do
+ActiveRecord::Schema.define(version: 2020_12_21_021143) do
 
   create_table "blog_comments", force: :cascade do |t|
     t.text "blog_comment"
@@ -57,6 +57,13 @@ ActiveRecord::Schema.define(version: 2020_12_09_034418) do
     t.string "course"
     t.integer "price"
     t.text "course_text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "notifications", force: :cascade do |t|
+    t.integer "contact_id"
+    t.boolean "checked", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

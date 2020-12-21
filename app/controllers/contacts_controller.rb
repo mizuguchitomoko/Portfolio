@@ -6,7 +6,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.save
-      #ContactMailer.contact_mail(@contact).deliver
+      @contact.notifications.create!
       redirect_to contacts_complete_path
     else
       render 'new'

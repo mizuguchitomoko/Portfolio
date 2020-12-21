@@ -33,12 +33,13 @@
     <div class="item1">
       <%= image_tag image_path("body3.jpeg"), class: "concept-image",alt: "concept-image" %>
       <div class="concept-text">
-        筋肉は活力の源。<br>
-        健康寿命を伸ばすには<br>
-        適度なトレーニングが必要です。<br>
+        日々のトレーニングの疑問点<br>
+        なんでもお答えします。<br>
+        お子様の運動指導も承ります。<br>
       </div>
     </div>
   </div>
+    <a href="/fees" class="btn-flat-border">MORE</a>
 </div>
 </center>
 
@@ -51,7 +52,7 @@
 　          <div class="img-container"><%= attachment_image_tag blog, :image, :fill, 150, 130 %>
 　          <section class ="blog-text">
 　            <h3 class="blog-text-heding"><%= link_to blog.blog_title, blog_path(blog) %></h3>
-　            <p class ="date"><%= blog.created_at.strftime('%Y/%m/%d %H:%M') %></p>
+　            <p class ="date"><%= blog.created_at.strftime('%Y/%m/%d %H:%M') %><%= "　Comments（#{blog.blog_comments.count}）" %></p>
             </div>
 　          </section>
 　        </div>

@@ -11,7 +11,7 @@ before_action :authenticate_director!
   def create
     @blog = Blog.new(blog_params)
     if @blog.save
-    redirect_to directors_blog_path(@blog.id)
+      redirect_to directors_blog_path(@blog.id)
     else
       render 'new'
     end

@@ -7,7 +7,7 @@
 　          <div class="img-container"><%= attachment_image_tag blog, :image, :fill, 150, 130 %>
 　          <section class ="blog-text">
 　            <h3 class="blog-text-heding"><%= link_to blog.blog_title, directors_blog_path(blog) %></h3>
-　            <p class ="date"><%= blog.created_at %></p>
+　            <p class ="date"><%= blog.created_at.strftime('%Y/%m/%d %H:%M') %><%= "　コメント(#{blog.blog_comments.count})" %></p>
 　          </section>
 　        </div>
 　      <% end %><br>

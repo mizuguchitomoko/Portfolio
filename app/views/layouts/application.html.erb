@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>LifeChangePartner</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= favicon_link_tag('favicon.ico') %>
@@ -23,7 +24,11 @@
           <li><%= link_to ' Blog', directors_blogs_path %></li>
           <li><%= link_to ' Course', directors_fees_path %></li>
           <li><%= link_to ' Schelule', directors_schedules_path %></li>
-          <li><%= link_to ' Contact', directors_contacts_path %></li>
+          <li><%= link_to ' Contact', directors_contacts_path %>
+          <% if !@unchecked_notifications.blank? %>
+          <span style="background-color: gold;width:10px;height:10px;top:14px;left:10px;position:absolute;border-radius:50%;"></span>
+          <% end %>
+          </li>
           <li><%= link_to ' Logout', destroy_director_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to ' About', about_path %></li>
