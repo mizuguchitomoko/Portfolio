@@ -8,6 +8,7 @@ class CreateContacts < ActiveRecord::Migration[5.2]
       t.string :phone_number
       t.integer :gender, null: false, default: 0
       t.integer :age, null: false, default: 0
+      t.integer :status
 
       t.timestamps
     end

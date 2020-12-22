@@ -17,6 +17,9 @@ class Contact < ApplicationRecord
   enum age:{
     １０代:1,２０代:2,３０代:3,４０代:4,５０代:5,６０代:6,７０代:7,８０代:8,９０代:9,１００代以上:10
   }
+  enum status: {
+    "未返信": 0,"返信済": 1
+  }
   validates :name, presence: true
   validates :email, presence: true
   validates :massage, presence: true

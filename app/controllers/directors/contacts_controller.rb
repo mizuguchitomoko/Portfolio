@@ -9,6 +9,16 @@ before_action :authenticate_director!
     @contact = Contact.find(params[:id])
   end
 
+  def edit
+    @contact = Contact.find(params[:id])
+  end
+
+  def update
+    @contact = Contact.find(params[:id])
+    @contact.update(contact_params)
+    redirect_to directors_contacts_path
+  end
+
   def destroy
     contact = Contact.find(params[:id])
     contact.destroy
@@ -23,4 +33,8 @@ before_action :authenticate_director!
     end
     return unchecked_notifications.size
   end
+  def contact_params
+    params.require(:contact).permit(:status)
+  end
+
 end

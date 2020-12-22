@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_12_21_021143) do
     t.string "phone_number"
     t.integer "gender", default: 0, null: false
     t.integer "age", default: 0, null: false
+    t.integer "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

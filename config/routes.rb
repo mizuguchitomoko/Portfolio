@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     resources :blogs
     resources :fees
     resources :schedules
-    resources :contacts, only: [:index, :show, :destroy]
+    resources :contacts, only: [:index, :update, :edit, :show, :destroy]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

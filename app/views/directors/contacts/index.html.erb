@@ -11,7 +11,7 @@
           <th>ID</th>
           <th>氏名</th>
           <th>メールアドレス</th>
-          <th></th>
+          <th>返信ステータス</th>
         </tr>
       <div class="table">
         <tbody>
@@ -20,6 +20,7 @@
           <td><%= contact.id %></td>
           <td><%= link_to directors_contact_path(contact) do %><%= contact.name %>様<% end %></td>
           <td><%= contact.email %></td>
+          <td><%= contact.status %></td>
           <td>
             <%= link_to "削除", directors_contact_path(contact), method: :delete, class:"btn btn-danger", "data-confirm" => "本当に削除しますか？" %>
           </td>

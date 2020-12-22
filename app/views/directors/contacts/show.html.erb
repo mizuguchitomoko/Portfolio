@@ -31,6 +31,12 @@
         <th>お電話番号</th>
         <th><%= @contact.phone_number %></th>
       </tr>
+      <tr>
+        <th>返信ステータス</th>
+        <%= form_with model:@contact, url: directors_contact_path(@contact), local:true do |f| %>
+        <th><%= f.select :status, Contact.statuses.keys, {} %>&nbsp;&nbsp;&nbsp;&nbsp;<%= f.submit '更新' ,class: "btn btn-warning" %></th>
+        <% end %>
+      </tr>
     </table>
     <h4>お問い合わせ内容</h4>
     <p class ="contact-message">
