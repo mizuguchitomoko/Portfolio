@@ -1,7 +1,7 @@
 class Director < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, #:registerable,#sigin_up機能を無効
          :recoverable, :rememberable, :validatable
 
   has_many :blogs, dependent: :destroy
