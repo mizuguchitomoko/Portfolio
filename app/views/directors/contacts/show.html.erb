@@ -1,3 +1,6 @@
+<% content_for(:body_attributes) do %>
+    data-turbolinks="false"
+<% end %>
 <div class ="container">
   <div class ="row">
     <div class="col-xs-7"><br><br>
@@ -25,7 +28,7 @@
       </tr>
       <tr>
         <th>email</th>
-        <th><%= @contact.email %></th>
+        <th><%= mail_to @contact.email %></th>
       </tr>
       <tr>
         <th>お電話番号</th>
