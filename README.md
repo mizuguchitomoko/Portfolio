@@ -28,7 +28,6 @@ https://docs.google.com/spreadsheets/d/1QoKiUFp9-mIwEuugxe9s1BHSmvhtmiByHSJMShZ4
 - OS：Linux(CentOS)
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
 - フレームワーク：Ruby on Rails
-- JSライブラリ：jQuery
 - IDE：Cloud9
 
 ### 使用素材
