@@ -27,7 +27,9 @@ before_action :authenticate_director!
 
   private
   def check_notifications
+    #未確認の通知(checked:falseの通知)を示すunchecked_notificationsメソッド
     unchecked_notifications = Notification.where(checked:false)
+    #indexを開いたらchecked:falseが全てchecked:trueになる
     unchecked_notifications.each do |un|
       un.update!(checked: true)
     end

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'reviews/index'
   get 'contacts/new'
   get 'schedule/index'
   root 'blogs#index'
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
   get 'contacts' => 'contacts#new'
   get 'contacts/complete' => 'contacts#complete'
   resources :contacts, only: [:new, :create]
+  resources :reviews, only: [:index, :create, :destroy]
 
   devise_for :directors
   namespace :directors do
