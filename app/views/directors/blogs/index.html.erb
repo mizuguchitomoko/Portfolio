@@ -1,0 +1,16 @@
+<div class="container">
+　<div class="row">
+　  <h1 id="blog">ブログ一覧</h1>
+　    <div class="blog-new">
+　    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span><%= link_to "ブログを投稿する", new_directors_blog_path %></div>
+　      <% @blogs.each do |blog| %>
+　          <div class="img-container"><%= attachment_image_tag blog, :image, :fill, 150, 130 %>
+　          <section class ="blog-text">
+　            <h3 class="blog-text-heding"><%= link_to blog.blog_title, directors_blog_path(blog) %></h3>
+　            <p class ="date"><%= blog.created_at.strftime('%Y/%m/%d %H:%M') %><%= "　コメント(#{blog.blog_comments.count})" %></p>
+　          </section>
+　        </div>
+　      <% end %><br>
+    <%= paginate @blogs %>
+　</div>
+</div>

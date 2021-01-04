@@ -1,0 +1,23 @@
+<div class="container">
+　<div class="row">
+　  <div class="col-xs-6 col-xs-offset-2">
+　  <h1>Course</h1><br>
+      <table class="table">
+        <thead>
+          <tr class="active">
+            <th>コース内容</th>
+            <th>料金</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @fees.each do |fee| %>
+            <tr>
+              <td class="text-left"><%= link_to fee.course, fee_path(fee) %></td>
+              <td class="fee-td">￥<%= fee.price %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+　</div>
+</div>

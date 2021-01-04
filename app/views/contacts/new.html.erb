@@ -1,0 +1,31 @@
+<div class="container">
+　<div class="row">
+　　<%= form_with model:@contact, url: contacts_path, local:true do |f| %>
+　　  <% if @contact.errors.any? %>
+      <div>
+        <ul style="color: red">
+          <% @contact.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+　　<h1>お問い合わせ</h1>
+　　  <h4>お名前(必須)</h4>
+　　  <%= f.text_field :name %>
+　　  <h4>ご住所(任意)</h4>
+　　  <%= f.select :address, Contact.addresses.keys, {} %>
+　　  <h4>性別(任意)</h4>
+　　  <%= f.select :gender, Contact.genders.keys, {} %>
+　　  <h4>年齢(任意)</h4>
+　　  <%= f.select :age, Contact.ages.keys, {} %>
+　　  <h4>メールアドレス(必須)</h4>
+　　  <%= f.text_field :email %>
+　　  <h4>お電話番号(ハイフンなし)(任意)</h4>
+　　  <%= f.text_field :phone_number %>
+　　  <h4>メッセージ(必須)</h4>
+　　  <%= f.text_area :massage, size: "40x10" %>
+　　  <%= f.submit "お問い合わせ送信", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,138 @@
+// Place all the styles related to the blogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.img-container{
+  display:flex;
+}
+.main-visual {
+  width: 100%;
+  height: 500px;
+  margin-top: 50px;
+  background-image: image-url("top1.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.main-visual-content {
+  width: 30%;
+  height: 360px;
+  margin-left: 800px;
+  text-align: center;
+  padding-top: 80px;
+}
+
+.main-visual-text {
+  font-size: 30px;
+  color: #fff;
+}
+.main-visual-name {
+  font-size: 20px;
+  margin-top: 30px;
+  color: #fff;
+}
+
+/* ブログ囲みデザイン */
+.box11{
+    padding: 0.5em 1em;
+    margin: 1em 0;
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+.box11 p {
+    margin: 0;
+    padding: 0;
+}
+#blog_title{
+  display: inline;
+}
+.blog-new{
+  padding-left: 200px;
+}
+.person1{
+  width:480px;
+  height:400px;
+}
+.name{
+  width:200px;
+}
+.about-box{
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f7f7f7;
+  display: flex;
+  justify-content: flex-start;
+}
+.concept{
+  width:80%;
+  text-align:center;
+  display: flex;
+  justify-content: center;
+}
+.item1{
+  width:35%;
+  height:230px;
+  margin:50px 20px;
+}
+
+.concept-text{
+  width:100%;
+  height:100px;
+  text-align:center;
+}
+.concept-image{
+  margin-bottom:30px;
+
+}
+.erea{
+  background-color:#F5F5F5;
+}
+
+/* top画面ボタンホバー効果 */
+.btn-flat-border {
+  display: inline-block;
+  padding: 0.3em 2em;
+  margin-bottom:50px;
+  text-decoration: none;
+  color: #000000;
+  border: solid 2px #000000;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.btn-flat-border:hover {
+  background: #C0C0C0;
+  color: white;
+}
+
+/* レスポンシブ対応 */
+@media screen and (max-width:425px) {
+  .main-visual-text {
+    display: none;
+  }
+  .concept {
+  width: 100%;
+  margin-top: 250px;
+  text-align: center;
+  display: block;
+  justify-content: center;
+}
+  .main-visual {
+  display: none;
+}
+.about-box{
+  padding-bottom: 20px;
+  margin-top: 200px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f7f7f7;
+  display: block;
+  justify-content: flex-start;
+}
+.clinic{
+  width: 100%;
+}
+.ggmap{
+  width: 100%;
+}
+}

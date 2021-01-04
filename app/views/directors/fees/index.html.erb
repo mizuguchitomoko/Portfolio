@@ -1,0 +1,37 @@
+<div class="container">
+　<div class="row">
+　  <%= form_with model:@fee, url: directors_fees_path, local:true do |f| %>
+　    <h1>コース一覧・追加</h1>
+　    <h4>コース内容</h4>
+　    <%= f.text_field :course %>
+　    <h4>料金</h4>
+　    <%= f.text_field :price %>
+      <h4>コース説明</h4>
+      <%= f.text_area :course_text,size: "40x10" %>
+      <%= f.submit "コース追加", class: "btn btn-primary" %>
+　  <% end %><br>
+　  <div class="col-xs-8 col-xs-offset-2">
+      <table class="table">
+        <thead>
+          <tr class="active">
+            <th>コース内容</th>
+            <th>料金</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @fees.each do |fee| %>
+            <tr>
+              <td class="text-left"><%= link_to fee.course, directors_fee_path(fee) %></td>
+              <td class="fee-td">￥<%= fee.price %></td>
+              <td class="fee-td">
+                <%= link_to "編集", edit_directors_fee_path(fee), class: " btn btn-success" %>
+                <%= link_to "削除", "/directors/fees/#{fee.id}", method: :delete, class:"btn btn-danger", "data-confirm" => "本当に削除しますか？" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+　</div>
+</div>

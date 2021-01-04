@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LifeChangePartner</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag('favicon.ico') %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+<header>
+  <div class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <nav class='nav navbar-nav navbar-left' >
+      <a class="navbar-brand" href="/">
+			  LIFE CHANGE PARTNER
+			</a>
+    </nav>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <% if director_signed_in? %>
+          <li><%= link_to ' About', about_path %></li>
+          <li><%= link_to ' Blog', directors_blogs_path %></li>
+          <li><%= link_to ' Course', directors_fees_path %></li>
+          <li><%= link_to ' Schelule', directors_schedules_path %></li>
+          <li><%= link_to ' Contact', directors_contacts_path %>
+          <!-- 新規お問い合わせ通知マーク -->
+          <% if !@unchecked_notifications.blank? %>
+          <span style="background-color: gold;width:10px;height:10px;top:14px;left:10px;position:absolute;border-radius:50%;"></span>
+          <% end %>
+          <!-- 通知マークここまで -->
+          </li>
+          <li><%= link_to ' Logout', destroy_director_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to ' About', about_path %></li>
+          <li><%= link_to ' Blog', blogs_path %></li>
+          <li><%= link_to ' Course', fees_path %></li>
+          <li><%= link_to ' Schedule', schedules_path %></li>
+          <li><%= link_to ' Review', reviews_path %></li>
+          <li><%= link_to ' Contact', contacts_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
+  <body>
+    <% if content_for?(:body_attributes) %>
+      <%= yield(:body_attributes) %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

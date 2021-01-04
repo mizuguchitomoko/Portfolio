@@ -1,0 +1,15 @@
+<div class="container">
+　<div class="row">
+　  <h1>料金表編集</h1>
+　  <%= form_with model:@fee, url:"/directors/fees/#{@fee.id}", local: true do |f| %>
+　    <h4>コース内容</h4>
+      <%= f.text_field :course %>
+　    <h4>料金</h4>
+      <%= f.text_field :price %>
+      <h4>コース説明</h4>
+      <%= f.text_area :course_text, size: "40x10" %>
+      <%= f.submit "編集を保存", class: "btn btn-primary" %>
+　  <% end %>
+　  <%= link_to "<< Back", directors_fees_path %>
+　</div>
+</div>

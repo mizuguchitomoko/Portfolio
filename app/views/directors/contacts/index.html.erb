@@ -1,0 +1,33 @@
+<div class="container">
+　<div class="row">
+　<div class="col-xs-9">
+　  <h1>お問い合わせ一覧</h1>
+　  <% if @notification_count != 0 %>
+　  <p><%= @notification_count %>件の新規お問い合わせがあります</p>
+　  <% end %>
+      <table class="table table-hover table-inverse">
+      <thead>
+        <tr>
+          <th>氏名</th>
+          <th>メールアドレス</th>
+          <th>返信ステータス</th>
+        </tr>
+      <div class="table">
+        <tbody>
+        <% @contacts.each do |contact| %>
+        <tr>
+          <td><div data-turbolinks="false"><%= link_to directors_contact_path(contact) do %><%= contact.name %>様<% end %></div></td>
+          <td><%= contact.email %></td>
+          <td><%= contact.status %></td>
+          <td>
+            <%= link_to "削除", directors_contact_path(contact), method: :delete, class:"btn btn-danger", "data-confirm" => "本当に削除しますか？" %>
+          </td>
+        </tr>
+        <% end %>
+        <tbody>
+       </div>
+    </table>
+    <%= paginate @contacts %>
+  </div>
+　</div>
+</div
