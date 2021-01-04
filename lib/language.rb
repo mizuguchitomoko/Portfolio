@@ -23,7 +23,10 @@ module Language
       Rails.logger.debug("request: " + text)
       Rails.logger.debug("response: " + response.body)
       # APIレスポンス出力
-      JSON.parse(response.body)['documentSentiment']['score']
+      score = JSON.parse(response.body)['documentSentiment']['score']
+      Rails.logger.debug("score: " + score)
+
+      score
     end
   end
 end
