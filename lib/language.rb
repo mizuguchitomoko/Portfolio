@@ -20,6 +20,8 @@ module Language
       request = Net::HTTP::Post.new(uri.request_uri)
       request['Content-Type'] = 'application/json'
       response = https.request(request, params)
+      Rails.logger.debug("request: " + text)
+      Rails.logger.debug("response: " + response.body)
       # APIレスポンス出力
       JSON.parse(response.body)['documentSentiment']['score']
     end
