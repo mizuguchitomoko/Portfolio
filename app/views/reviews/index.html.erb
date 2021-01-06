@@ -9,7 +9,7 @@
       <%= f.submit "送信", class: "btn btn-primary" %>
 　  <% end %><br>
     <% @reviews.each do |review| %>
-    <div class="box11">
+    <div class="balloon4">
       <p>お名前：<%= review.review_name %>
       <span class="comment-date pull-right">
       <%= link_to "/reviews/#{review.id}", method: :delete do %>
