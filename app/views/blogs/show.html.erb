@@ -11,7 +11,7 @@
 　    <%= attachment_image_tag @blog, :image, :fill, 500, 350 %>
 　  </div>
 　  <p class="blog-text">
-　    <%= simple_format(@blog.blog_text) %>
+　    <%= safe_join(@blog.blog_text.split("\n"),tag(:br)) %>
 　  </p>
     <!-- コメント一覧 -->
     <div id="comment-create">

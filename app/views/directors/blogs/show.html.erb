@@ -11,7 +11,7 @@
 　    <%= attachment_image_tag @blog, :image, :fill, 500, 350 %>
 　  </div>
 　  <p class="blog-text">
-　    <%= simple_format(@blog.blog_text) %>
+　    <%= safe_join(@blog.blog_text.split("\n"),tag(:br)) %>
 　  </p>
 　  <%= link_to "ブログ編集", edit_directors_blog_path(@blog), class:"btn btn-primary" %>
 　  <%= link_to "ブログ削除", directors_blog_path(@blog), method: :delete, class:"btn btn-danger", "data-confirm" => "本当に削除しますか？" %><br>
