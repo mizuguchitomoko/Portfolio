@@ -2,7 +2,7 @@ class Directors::ContactsController < ApplicationController
 before_action :authenticate_director!
   def index
     @contacts = Contact.page(params[:page]).per(6)
-    @notification_count = check_notifications
+    @notification_count = Notification.checked_count
   end
 
   def show
@@ -26,15 +26,6 @@ before_action :authenticate_director!
   end
 
   private
-  def check_notifications
-    #未確認の通知(checked:falseの通知)を示すunchecked_notificationsメソッド
-    unchecked_notifications = Notification.where(checked:false)
-    #indexを開いたらchecked:falseが全てchecked:trueになる
-    unchecked_notifications.each do |un|
-      un.update!(checked: true)
-    end
-    return unchecked_notifications.size
-  end
   def contact_params
     params.require(:contact).permit(:status)
   end
