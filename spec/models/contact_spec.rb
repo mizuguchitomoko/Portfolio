@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Contact, type: :model do
+describe Contact, type: :model do
 
   it "名前、メールアドレス、メッセージがある場合、有効である" do
     contact = Contact.new(

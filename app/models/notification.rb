@@ -5,13 +5,16 @@ class Notification < ApplicationRecord
 
   #クラスメソッド
   def self.confirmed
+    #checkedがfalseのデータを取得
     unchecked_notifications = where(checked: false)
+    #trueにupdateする
     unchecked_notifications.each do |un|
       un.update!(checked: true)
     end
     unchecked_notifications
   end
   def self.checked_count
+    #unchecked_notificationsの数を返す
     confirmed.count
   end
 end
