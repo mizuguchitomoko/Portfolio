@@ -2,7 +2,8 @@ class Directors::ContactsController < ApplicationController
 before_action :authenticate_director!
   def index
     @contacts = Contact.page(params[:page]).per(6)
-    @notification_count = Notification.checked_count
+    #models/notification.rbで定義したクラスメソッドを呼び、contact/indexを見たら稼働
+    Notification.confirmed
   end
 
   def show
