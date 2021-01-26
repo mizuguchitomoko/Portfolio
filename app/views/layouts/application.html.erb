@@ -26,7 +26,7 @@
           <li><%= link_to ' Schelule', directors_schedules_path %></li>
           <li><%= link_to ' Contact', directors_contacts_path %>
           <!-- unchecked_notificationsがnilじゃなかったら表示 -->
-          <% if !@unchecked_notifications.blank? %>
+          <% if @unchecked_notifications.any? %>
           <span style="background-color: gold;width:10px;height:10px;top:14px;left:10px;position:absolute;border-radius:50%;"></span>
           <% end %>
           <!-- 通知マークここまで -->
