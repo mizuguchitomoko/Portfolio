@@ -25,7 +25,7 @@
           <li><%= link_to ' Course', directors_fees_path %></li>
           <li><%= link_to ' Schelule', directors_schedules_path %></li>
           <li><%= link_to ' Contact', directors_contacts_path %>
-          <!-- 新規お問い合わせ通知マーク -->
+          <!-- unchecked_notificationsがnilじゃなかったら表示 -->
           <% if !@unchecked_notifications.blank? %>
           <span style="background-color: gold;width:10px;height:10px;top:14px;left:10px;position:absolute;border-radius:50%;"></span>
           <% end %>
